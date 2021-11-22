@@ -19,4 +19,9 @@ app.get('/', (req, res) => {
 });
 //route for contacts 
 app.get('/contacts', (req, res) => { 
-    res.render('contacts'); });
+    res.render('contacts'); 
+});
+//Render the contacts file in the /api/register route
+app.get("/register", (req, res) => {
+    res.render('register');
+});
