@@ -1,6 +1,12 @@
 const express = require('express'); 
 //creating app 
 const app = express(); 
+// using JSON and URL Encoded middleware
+
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
+
 //send an HTTP response when receiving HTTP GET / 
 app.use(express.static('public')); 
 app.get('/', (req, res) => { 
@@ -32,3 +38,6 @@ app.get("/login", (req, res) => {
 //pass requests to the router middleware 
 const router = require('./routes/apis'); 
 app.use(router);
+
+const session = require('express-session');
+app.use(session({secret: 'some secret code'}));
