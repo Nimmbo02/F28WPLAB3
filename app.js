@@ -17,3 +17,6 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => { 
     res.render('index'); //no need for ejs extension 
 });
+//route for contacts 
+app.get('/contacts', (req, res) => { 
+    res.render('contacts'); });
